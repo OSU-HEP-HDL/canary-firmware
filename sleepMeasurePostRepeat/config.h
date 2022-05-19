@@ -11,30 +11,30 @@
 #define SLEEPTIME 10 //sleep interval [s]
 #define INTEGRATIONTIME 1 //measurements integration time interval [s]
 #define PRINTSERIAL false //print measurements to serial output
-#define POST false //connect and post measurements to MQTT server
+#define POST true //connect and post measurements to MQTT server
 #define VERBOSE true //print connection status and posting details
 #define TLS false //use TLS encryption; does not work with ESP8266
 //#define ESP8266 //use an ESP8266 microcontroller instead of an ESP32 (default)
 
 //******************************************
 //wifi
-#define WIFISSID "ssid" //wifi SSID
-#define WIFIPASSWORD "password" //wifi password
+#define WIFISSID "Bifrost" //wifi SSID
+#define WIFIPASSWORD "alJ3iP4Od1oyCt5ein1et5lOb5I6" //wifi password
 
 //******************************************
 //MQTT
 #define MQTTMESSAGESIZE 1024 //maximum message length [byte]
-#define MQTTSERVER "mqqtserver" //MQTT server address
+#define MQTTSERVER "10.0.1.199" //MQTT server address
 #define MQTTPORT 1883 //MQTT server port
 #define MQTTTLSPORT 8883 //MQTT with TLS server port
 #define MQTTUSERNAME "username" //MQTT username
 #define MQTTPASSWORD "password" //MQTT password
-#define MQTTTOPIC "topic" //MQTT topic
-//#define INSTITUTE "institute" //institute of the measuring device (optional)
+#define MQTTTOPIC "canary" //MQTT topic
+// #define INSTITUTE "institute" //institute of the measuring device (optional)
 //#define ROOM "room" //room of the measuring device (optional)
 //#define LOCATION "location" //location of the measuring device (optional)
 //#define NAME "name" //name of the measuring device (optional)
-//#define MACASNAME //use the MAC address as device name (optional)
+#define MACASNAME //use the MAC address as device name (optional)
 #define MQTTTIME 10 //MQTT broker check-in time interval [s]
 
 //******************************************
