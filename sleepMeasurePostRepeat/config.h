@@ -18,19 +18,19 @@
 
 //******************************************
 //wifi
-#define WIFISSID "Bifrost" //wifi SSID
-#define WIFIPASSWORD "alJ3iP4Od1oyCt5ein1et5lOb5I6" //wifi password
+#define WIFISSID "OSUREGISTERED" //wifi SSID
+#define WIFIPASSWORD "" //"alJ3iP4Od1oyCt5ein1et5lOb5I6" //wifi password
 
 //******************************************
 //MQTT
 #define MQTTMESSAGESIZE 1024 //maximum message length [byte]
-#define MQTTSERVER "10.0.1.199" //MQTT server address
+#define MQTTSERVER "docker.dhcp.okstate.edu" //MQTT server address
 #define MQTTPORT 1883 //MQTT server port
 #define MQTTTLSPORT 8883 //MQTT with TLS server port
 #define MQTTUSERNAME "username" //MQTT username
 #define MQTTPASSWORD "password" //MQTT password
 #define MQTTTOPIC "canary" //MQTT topic
-// #define INSTITUTE "institute" //institute of the measuring device (optional)
+#define INSTITUTE "Oklahoma State University" //institute of the measuring device (optional)
 //#define ROOM "room" //room of the measuring device (optional)
 //#define LOCATION "location" //location of the measuring device (optional)
 //#define NAME "name" //name of the measuring device (optional)
