@@ -1,0 +1,29 @@
+---
+- hosts: all
+  gather_facts: yes
+  become: true
+
+  tasks:
+    - name: Upgrade everything 
+      apt:
+        name: "*"
+        state: latest
+        force_apt_get: True
+
+    - name: Install packages
+      ansible.builtin.package:
+        name:  
+        - build-essential
+        - git
+
+    - name: Install Arduino-CLI
+      community.general.snap:
+        name:
+          - arduino-cli
+    - name: setup arduino-cli
+      shell:
+        - arduino-cli --config-file /vagrant/arduino-cli.yaml core update-index
+        - arduino-cli --config-file /vagrant/arduino-cli.yaml board install
+        - arduino-cli --config-file /vagrant/arduino-cli.yaml core install esp32:esp32
+
+        state: present             
