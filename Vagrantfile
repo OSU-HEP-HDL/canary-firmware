@@ -12,6 +12,9 @@ Vagrant.configure("2") do |config|
     end
   # Provider for Docker
     config.vm.provider :docker do |docker, override|
+      # docker.env = {DOCKER_DEFAULT_PLATFORM=ENV:"linux/amd64"}
+    config.env.enable
+    config.vm.box = ENV['DOCKER_DEFAULT_PLATFORM']
       override.vm.box = nil
       docker.image = "welchsteven/vagrant-provider:ubuntu"
       docker.remains_running = true
@@ -19,5 +22,7 @@ Vagrant.configure("2") do |config|
       docker.privileged = true
       docker.volumes = ["/sys/fs/cgroup:/sys/fs/cgroup:rw"]
       docker.create_args = ["--cgroupns=host"]
+      
     end
   end
+  # export DOCKER_DEFAULT_PLATFORM=linux/amd64

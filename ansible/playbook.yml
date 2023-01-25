@@ -15,14 +15,19 @@
         name:  
           - build-essential
           - git
+          - curl
+          - python3
+          - pip
         state: present             
-
+    - name: Install serial python package
+      ansible.builtin.pip:
+        name: pyserial
     - name: Install Arduino-CLI
-      community.general.snap:
-        name:
-          - arduino-cli
-        state: present             
+      shell:
+        "curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | BINDIR=/usr/local/bin sh"
     
     - name: setup arduino-cli
       shell:
         "./startup.sh"
+
+        # Need to start snapd service and snap refresh before installing the arduino cli
