@@ -1,5 +1,5 @@
 Vagrant.configure("2") do |config|
-    config.vm.box = "ubuntu/jammy64"
+    config.env.enable  
     config.vm.hostname = "ubuntu"
     config.vm.provision "ansible_local" do |ansible|
         ansible.playbook = "ansible/playbook.yml"
@@ -7,22 +7,20 @@ Vagrant.configure("2") do |config|
     end
         # Provider for VirtualBox
     config.vm.provider :virtualbox do |vb|
+      config.vm.box = "ubuntu/jammy64"
       vb.memory = "2048"
       vb.cpus = 2
     end
   # Provider for Docker
     config.vm.provider :docker do |docker, override|
-      # docker.env = {DOCKER_DEFAULT_PLATFORM=ENV:"linux/amd64"}
-    config.env.enable
-    config.vm.box = ENV['DOCKER_DEFAULT_PLATFORM']
-      override.vm.box = nil
+      
+      override.vm.box = ENV['DOCKER_DEFAULT_PLATFORM']
+      # override.vm.box = nil
       docker.image = "welchsteven/vagrant-provider:ubuntu"
       docker.remains_running = true
       docker.has_ssh = true
       docker.privileged = true
       docker.volumes = ["/sys/fs/cgroup:/sys/fs/cgroup:rw"]
       docker.create_args = ["--cgroupns=host"]
-      
     end
-  end
-  # export DOCKER_DEFAULT_PLATFORM=linux/amd64
+end
