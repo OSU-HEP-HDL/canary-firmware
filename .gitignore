@@ -1,3 +1,7 @@
 .DS_Store
 .vagrant/*
 .vscode/*
+build*
+sleepMeasurePostRepeat/debug_custom.json
+sleepMeasurePostRepeat/debug.cfg
+sleepMeasurePostRepeat/esp32.svd

@@ -14,7 +14,7 @@
 #define POST true //connect and post measurements to MQTT server
 #define VERBOSE true //print connection status and posting details
 #define TLS false //use TLS encryption; does not work with ESP8266
-#define ESP8266 //use an ESP8266 microcontroller instead of an ESP32 (default)
+// #define ESP8266 //use an ESP8266 microcontroller instead of an ESP32 (default)
 
 //******************************************
 //wifi
