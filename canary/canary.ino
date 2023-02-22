@@ -16,14 +16,11 @@
 
 //******************************************
 // libraries
-#ifndef CONFIG_H
-#define CONFIG_H
 #include "config.h"
-#endif
 #include "sensor.h"
 #include "vector"
 #include "memory"
-#include "AsyncDelay.h"
+#include <AsyncDelay.h>
 #include "ArduinoJson.h"
 
 // wifi and MQTT

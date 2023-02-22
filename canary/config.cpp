@@ -1,7 +1,4 @@
-#ifndef CONFIG_H
-#define CONFIG_H
 #include "config.h"
-#endif
 
 // bool CAFFEINE = true;
 
@@ -70,7 +67,7 @@ bool setDefault()
     preferences.putBool("TLS", TLS);
     preferences.putString("WIFISSID", WIFISSID);
     preferences.putString("WIFIPASSWORD", WIFIPASSWORD);
-    preferences.putInt("MQTTMESSAGESIZE", MQTTMESSAGESIZE);
+    preferences.putBytes("MQTTMESSAGESIZE", MQTTMESSAGESIZE);
     preferences.putString("MQTTSERVER", MQTTSERVER);
     preferences.putInt("MQTTPORT", MQTTPORT);
     preferences.putInt("MQTTTLSPORT", MQTTTLSPORT);

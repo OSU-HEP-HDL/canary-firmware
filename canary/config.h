@@ -6,6 +6,9 @@
  */
 
 //******************************************
+#ifndef CONFIG_H
+#define CONFIG_H
+
 #include <Preferences.h>
 Preferences preferences;
 // setup
@@ -130,3 +133,5 @@ int ADS1x153B;      // NTC B //3435
   "JDGFoqgCWjBH4d1QB7wCCZAA62RjYJsWvIjJEubSfZGL+T0yjWW06XyxV3bqxbYo\n" \
   "Ob8VZRzI9neWagqNdwvYkQsEjgfbKbYK7p2CNTUQ\n"                         \
   "-----END CERTIFICATE-----\n"
+
+#endif
