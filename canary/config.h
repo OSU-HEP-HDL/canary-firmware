@@ -7,6 +7,7 @@
 
 //******************************************
 #include <Preferences.h>
+Preferences preferences;
 // setup
 // #define CAFFEINE true     // do not go to sleep; use if not battery operated
 bool CAFFEINE;
@@ -20,18 +21,18 @@ bool TLS;            // use TLS encryption; does not work with ESP8266
 
 //******************************************
 // wifi
-string WIFISSID;     // wifi SSID
-string WIFIPASSWORD; // wifi password
+String WIFISSID;     // wifi SSID
+String WIFIPASSWORD; // wifi password
 
 //******************************************
 // MQTT
-int MQTTMESSAGESIZE; // maximum message length [byte]
-string MQTTSERVER;   // MQTT server address
-int MQTTPORT;        // MQTT server port
-int MQTTTLSPORT;     // MQTT with TLS server port
-string MQTTUSERNAME; // MQTT username
-string MQTTPASSWORD; // MQTT password
-string MQTTTOPIC;    // MQTT topic
+byte MQTTMESSAGESIZE; // maximum message length [byte]
+String MQTTSERVER;    // MQTT server address
+int MQTTPORT;         // MQTT server port
+int MQTTTLSPORT;      // MQTT with TLS server port
+String MQTTUSERNAME;  // MQTT username
+String MQTTPASSWORD;  // MQTT password
+String MQTTTOPIC;     // MQTT topic
 // #define INSTITUTE "institute" //institute of the measuring device (optional)
 // #define ROOM "room" //room of the measuring device (optional)
 // #define LOCATION "location" //location of the measuring device (optional)
@@ -58,7 +59,7 @@ bool ESP8266 = false;
 // #define MAX31865CS 33     // CS pin for ESP32
 // #endif
 int MAX31865CS;
-string MAX31865RHSOURCE; // RH measurement source for dew point calculation; use instance name from sleepMeasurePostRepeat.ino
+String MAX31865RHSOURCE; // RH measurement source for dew point calculation; use instance name from sleepMeasurePostRepeat.ino
 
 //******************************************
 // SPS30 dust particle counter
@@ -72,7 +73,7 @@ bool SPS30VERBOSE; // print SPS30 information
 // #define ADS1115 //enable ADS1115 (16 bit)
 float ADS1x15VDD;   // VDD [V]
 float ADS1x15VREF;  // ADC reference voltage [V] //NOTE valid for ADC gain set to 1, see ADS1x15GAIN
-string ADS1x15GAIN; // ADC gain: 1x gain  +/- 4.096V  1 bit = 2mV (ADS1015) or 0.125mV (ADS1115), see ADS1x15VREF
+String ADS1x15GAIN; // ADC gain: 1x gain  +/- 4.096V  1 bit = 2mV (ADS1015) or 0.125mV (ADS1115), see ADS1x15VREF
 
 // ADC0/NTC0 (channel 0)
 // #define ADS1x150ADC //NOTE set also the voltage divider resistor value

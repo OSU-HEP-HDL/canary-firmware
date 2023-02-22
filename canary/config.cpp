@@ -1,4 +1,7 @@
+#ifndef CONFIG_H
+#define CONFIG_H
 #include "config.h"
+#endif
 
 // bool CAFFEINE = true;
 
