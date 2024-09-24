@@ -11,9 +11,7 @@
 #include "ArduinoJson.h"
 #include "WiFiClientSecure.h"
 #include "config.h"
-#ifdef ESP8266
-#include "ESP8266WiFi.h"
-#endif // ESP8266
+
 
 //******************************************
 class MQTTHandler
